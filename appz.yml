@@ -26,7 +26,7 @@ volumes:
   mode: ReadWriteOnce   
 
 properties:
-  revision : 9
+  revision : 10
   GRAYLOG_MONGODB_URI : mongodb://appz:123@mongodb-5-0-0.mongodb-5-0:27017,mongodb-5-0-1.mongodb-5-0:27017,mongodb-5-0-2.mongodb-5-0:27017/graylog?replicaSet=rs0
   GRAYLOG_ELASTICSEARCH_HOSTS : http://elasticsearch-7-1:9200/
   GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED : false
