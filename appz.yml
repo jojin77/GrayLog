@@ -4,11 +4,11 @@ app:
   notify: jjpaul@ecloudcontrol.com
 
 build:
-  version: 3.3
+  version: 3.1
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: graylog-3.3
+  image_template: graylog-3.1
 
 deploy:
   context: jojin77/DEV
