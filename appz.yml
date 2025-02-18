@@ -8,7 +8,7 @@ build:
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: graylog-5.2
+  image_template: graylog-6.1
 
 deploy:
   context: jojin77/DEV
@@ -28,7 +28,8 @@ volumes:
 properties:
   revision : 2
   GRAYLOG_MONGODB_URI : mongodb://mongodb-6-0:27017/graylog
-  GRAYLOG_ELASTICSEARCH_HOSTS : http://opensearch-2-13-0.opensearch-2-13:9200/,http://opensearch-2-13-1.opensearch-2-13:9200/,http://opensearch-2-13-2.opensearch-2-13:9200/,http://opensearch-2-13-3.opensearch-2-13:9200/,http://opensearch-2-13-4.opensearch-2-13:9200/
+  GRAYLOG_ELASTICSEARCH_HOSTS : http://opensearch-2-13-0.opensearch-2-13:9200/,http://opensearch-2-13-1.opensearch-2-13:9200/,http://opensearch-2-13-2.opensearch-2-13:9200/
+  #GRAYLOG_ELASTICSEARCH_HOSTS : http://opensearch-2-13-0.opensearch-2-13:9200/,http://opensearch-2-13-1.opensearch-2-13:9200/,http://opensearch-2-13-2.opensearch-2-13:9200/,http://opensearch-2-13-3.opensearch-2-13:9200/,http://opensearch-2-13-4.opensearch-2-13:9200/
   NODE_MODE: multi-node
   GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED : true
   GRAYLOG_PASSWORD_SECRET:
@@ -48,7 +49,7 @@ properties:
   RING_SIZE : 131072
   GRAYLOG_PROMETHEUS_EXPORTER_ENABLED : true
   GRAYLOG_PROMETHEUS_EXPORTER_BIND_ADDRESS : 0.0.0.0:9833
-  MINIO_HOSTNAME : http://18.118.201.158:9000
+  MINIO_HOSTNAME : http://minio-2-0:9000
   MINIO_BUCKET : graylog-audit
   MINIO_ACCESS_KEY : 
     vault: MINIO_ACCESS_KEY
