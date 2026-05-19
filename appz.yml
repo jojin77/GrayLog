@@ -4,15 +4,15 @@ app:
   notify: jjpaul@ecloudcontrol.com
 
 build:
-  version: 5.2
+  version: 7.0
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: graylog-6.1
+  image_template: graylog-7.0
 
 deploy:
   context: jojin77/DEV
-  replicas: 3
+  replicas: 1
   type: statefulset
   port:
   - 9000
@@ -27,10 +27,10 @@ volumes:
 
 properties:
   revision : 6
-  GRAYLOG_MONGODB_URI : mongodb://mongodb-6-0:27017/graylog
-  GRAYLOG_ELASTICSEARCH_HOSTS : http://opensearch-2-13-0.opensearch-2-13:9200/,http://opensearch-2-13-1.opensearch-2-13:9200/,http://opensearch-2-13-2.opensearch-2-13:9200/
+  GRAYLOG_MONGODB_URI : mongodb://mongo-6-0:27017/graylog
+  GRAYLOG_ELASTICSEARCH_HOSTS : http://opensearch-2-13-0.opensearch-2-13:9200/
   #GRAYLOG_ELASTICSEARCH_HOSTS : http://opensearch-2-13-0.opensearch-2-13:9200/,http://opensearch-2-13-1.opensearch-2-13:9200/,http://opensearch-2-13-2.opensearch-2-13:9200/,http://opensearch-2-13-3.opensearch-2-13:9200/,http://opensearch-2-13-4.opensearch-2-13:9200/
-  NODE_MODE: multi-node
+  NODE_MODE: single-node
   GRAYLOG_ELASTICSEARCH_DISCOVERY_ENABLED : true
   GRAYLOG_PASSWORD_SECRET:
     vault: GRAYLOG_PASSWORD_SECRET
